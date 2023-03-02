@@ -1,0 +1,20 @@
+#cloud-config
+users:
+  - name: ubuntu #User name
+    sudo: ALL=(ALL) NOPASSWD:ALL #SUDO Rules
+    groups: users, admin # Benutzergruppen, zu denen der Benutzer gehört
+    home: /home/ubuntu #Pfad zum Home verzeichnis. Wenn der User "cd ~" ausführt geht er zu diesem Pfad
+    shell: /bin/bash #Definiert dass Bash als Shell verwendet werden sollte.
+    lock_passwd: false #Erlaubt den Usern ihre Passwörter zu ändern
+    plain_text_passwd: "password" # Default password (nicht Hashed)
+ssh_pwauth:
+  true #Erlaubt den Usern die Verbindung mit einem Passwort über SSH zu machen.
+  #Falls false nur Public/Private Key Methode wäre erlaubt
+disable_root: false # Login als Root User über SSH ist erlaubt
+packages: #Packages die auf der Machine installiert werden sollten
+  - apache2
+  - curl
+  - wget
+  - php
+  - libapache2-mod-php
+  - php-mysqli
