@@ -16,3 +16,39 @@ packages: #Packages die auf der Machine installiert werden sollten
   - php
   - libapache2-mod-php
   - php-mysqli
+  - adminer
+runcmd:
+  - sudo a2enconf adminer
+  - sudo systemctl restart apache2
+write_files:
+  - path: /var/www/html/db.php
+    content: |
+      <?php
+          //database
+          $servername = "172.26.6.250";
+          $username = "admin";
+          $password = "password";
+          $dbname = "mysql";
+
+          // Create connection
+          $conn = new mysqli($servername, $username, $password, $dbname);
+          // Check connection
+          if ($conn->connect_error) {
+                  die("Connection failed: " . $conn->connect_error);
+          }
+
+          $sql = "select Host, User from mysql.user;";
+          $result = $conn->query($sql);
+          while($row = $result->fetch_assoc()){
+                  echo($row["Host"] . " / " . $row["User"] . "<br />");
+          }
+          //var_dump($result);
+      ?>
+  - path: /var/www/html/info.php
+    content: |
+      <?php
+
+      // Show all information, defaults to INFO_ALL
+      phpinfo();
+
+      ?>
