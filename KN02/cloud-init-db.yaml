@@ -11,7 +11,6 @@ ssh_pwauth: true #Erlaubt den Usern die Verbindung mit einem Passwort über SSH 
 disable_root: false # Login als Root User über SSH ist erlaubt
 packages: #Packages die auf der Machine installiert werden sollten
   - mariadb-server
-  - php-mysqli
 runcmd:
   - sudo mysql -sfu root -e "GRANT ALL ON *.* TO 'admin'@'%' IDENTIFIED BY'password' WITH GRANT OPTION;"
   - sudo sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
