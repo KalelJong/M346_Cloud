@@ -1,0 +1,11 @@
+#cloud-config
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/ubuntu
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCF3E1UzKDMUiT06rqiRuGlvqZy/YTCQhtAPoMcz3UsAlrtMTlGxjABcPT2JfoO6EbIVf2zoYgyZtrPGPjSSzUonDEyvn+zGNsQD5S9v2KZp5q9vtqOBMLepSgXF6vWyaVn0A7Wn5Kp0fBA5ja8sZ1OkAEMBlK00Ob8p9uLR98Sdwp78tjkmL3EBNedlNfGI3TatTMUBL0O4FytSKtQncOqFPrg9OcXsawK2smTYNfVADz3agjk+27pXdYhU/7L6g7XWynCa/U1sfK8mu/cfBHpYLQTjVTMHZKcUR01und+AVAA0BCgYhfnK1yHwCaFlvDOWACHQK4zFxMAL7uu5eL3 aws-key
+ssh_pwauth: false
+disable_root: false
