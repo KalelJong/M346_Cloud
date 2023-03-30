@@ -1,4 +1,4 @@
-#KN02
+# KN02
 ## Aufgabe B
 Instanz mit Cloud-Init Datei erstellt
 <img src="/KN02/img/Aufgabe_B_Instances.png">
