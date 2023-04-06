@@ -24,9 +24,7 @@ S3-Buckets werden als warmer Speicher definiert. Es gibt noch andere Arten von S
 
 Wenn die Instanz gelöscht wird, werden auch die Dateien auf dem Volume gelöscht.
 
-Das Volume selbst existiert noch, aber der Mount-Bind zur Instanz existiert nicht mehr. Da die Dateien auf der Instanz gelöscht wurden, ist dies auch mit den Dateien auf dem Volume geschehen. Sie können nun das Volume zu einer anderen Instanz hinzufügen und einen neuen Mount-Bind erstellen
-
-Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
+Das Volume selbst existiert noch, aber der Mount-Bind zur Instanz existiert nicht mehr. Die Dateien aufs Volumen sind noch vorhanden. Sie können nun das Volume zu einer anderen Instanz hinzufügen und einen neuen Mount-Bind erstellen
 
 ### Vor und Nach Instanzlöschung
 <img src="/KN04/img/Aufgabe_B_Volume1.png">
